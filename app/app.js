@@ -14,7 +14,6 @@
 
   #######################################################################*/
 
-
 var app = angular.module('customersApp', ['ngRoute']);
 
 app.config(function ($routeProvider) {

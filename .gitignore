@@ -1,8 +1,7 @@
 node_modules
 bower_components
-FundamentalsAngularJS.sublime-project
-FundamentalsAngularJS.sublime-workspace
+AgileDevelopmentAngularJS.sublime-project
+AgileDevelopmentAngularJS.sublime-workspace
 npm-debug.log
 .DS_Store
-app/lib
 dist

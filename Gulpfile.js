@@ -6,7 +6,7 @@ var gulp      = require('gulp'),
     jshint    = require('gulp-jshint'),
     historyApiFallback = require('connect-history-api-fallback');
 
-// Servidor web de desarrollo
+// Developer server config
 gulp.task('server', function() {
   connect.server({
     root: './',
@@ -20,29 +20,28 @@ gulp.task('server', function() {
 });
 
 
-// Recarga el navegador cuando hay cambios en el HTML
+// Reload automatic the browser html
 gulp.task('html', function() {
-  gulp.src('./app/**/*.html')
+  gulp.src('./**/*.html')
     .pipe(connect.reload());
 });
 
 
-// Busca errores en el JS y nos los muestra por pantalla
+// Search warnings and errors in js scripts and then show by console
 gulp.task('jshint', function() {
-  return gulp.src('./app/app/**/*.js')
+  return gulp.src('./app/**/*.js')
     .pipe(jshint('.jshintrc'))  
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(jshint.reporter('fail'));
 });
 
-// Vigila cambios que se produzcan en el código
-// y lanza las tareas relacionadas
+// The Watchmen
 gulp.task('watch', function() {
-  gulp.watch(['./app/**/*.html'], ['html']);
+  gulp.watch(['./**/*.html'], ['html']);
   gulp.watch(['./bower.json'], ['wiredep']);
 });
 
-// Por defecto, cuando escribamos 'gulp' en la consola, ejecutará las tareas que estén entre corchetes
+// By default, run this task
 gulp.task('default', ['server','watch', 'jshint']);
 
 
