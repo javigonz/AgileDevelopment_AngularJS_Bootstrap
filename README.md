@@ -1,4 +1,4 @@
-# Agile Development with AngularJS+Bootrap
+# Agile Development with AngularJS+Bootstrap
 
 Easy App developed in AngularJS, uses Controller, Module, Factory, Routes, Config, Directives
 
