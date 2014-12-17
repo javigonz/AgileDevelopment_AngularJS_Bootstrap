@@ -1,11 +1,9 @@
 bower_components
-<<<<<<< Updated upstream
-AgileDevelopmentAngularJS.sublime-project
-AgileDevelopmentAngularJS.sublime-workspace
-=======
+node_modules
+AgileDevelopment_AngularJS.sublime-project
+AgileDevelopment_AngularJS.sublime-workspace
 AgileAngularJS.sublime-project
 AgileAngularJS.sublime-workspace
->>>>>>> Stashed changes
 npm-debug.log
 .DS_Store
 dist
