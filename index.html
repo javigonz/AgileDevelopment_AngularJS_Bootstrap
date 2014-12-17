@@ -1,23 +1,23 @@
 ﻿<!DOCTYPE html>
-<html data-ng-app="customersApp">
+<html data-ng-app="usersApp">
 <head>
-    <title>Customer Manager</title>
+    <title>Users Manager</title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/bootstrap-responsive.min.css" rel="stylesheet" />
-    <link href="Content/customerManagementStyles.css" rel="stylesheet" />
+    <link href="Content/usersManagementStyles.css" rel="stylesheet" />
 </head>
 <body>
 
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
-                <a class="brand " href="#/">
-                    <img src="Content/Images/people.png" alt="logo"> Customer Manager
+                <a class="brand " >
+                    <img src="Content/Images/people.png" alt="logo"> Users Manager
                 </a>
-               <!-- <ul class="nav nav-pills" data-ng-controller="NavbarController">
-                    <li data-ng-class="{'active':getClass('/customers')}"><a href="#/customers">Customers</a></li>
-                    <li data-ng-class="{'active':getClass('/orders')}"><a href="#/orders">Orders</a></li>
-                </ul>-->
+                <ul class="nav nav-pills" data-ng-controller="NavbarController">
+                    <li data-ng-class="{'active':getClass('/userDetail')}"><a href="/"><i class="icon-user"></i> List of users</a></li>
+                    <li data-ng-class="{'active':getClass('/')}"><a href="/addNewUser"><i class="icon-plus-sign"></i> Add new user</a></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -52,6 +52,7 @@
     <!-- Vendor Libs: jQuery only used for Bootstrap functionality -->
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
     <script src="Scripts/jquery.min.js"></script>
 
     <!-- UI Libs -->
@@ -61,7 +62,7 @@
     <!-- App libs -->
     <script src="app/app.js"></script>
     <script src="app/controllers/controllers.js"></script>
-    <script src="app/services/customersService.js"></script>
+    <script src="app/services/usersService.js"></script>
     <script src="app/directives/animatedView.js"></script>
 </body>
 </html>

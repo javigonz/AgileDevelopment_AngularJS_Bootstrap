@@ -14,17 +14,29 @@
 
   #######################################################################*/
 
-var app = angular.module('customersApp', ['ngRoute']);
+var app = angular.module('usersApp', ['ngRoute','ngResource']);
 
-app.config(function ($routeProvider) {
+app.config(function ($locationProvider, $routeProvider) {
+
+    $locationProvider.html5Mode(true);
+
     $routeProvider
-      .when ('/customers',
+      .when ('/',
           {
-            controller: 'CustomersController',
-            templateUrl: '/app/partials/customers.html'
+            controller: 'UsersController',
+            templateUrl: '/app/partials/users.html'
           })
-
-      .otherwise ({ redirectTo: '/customers'});
+      .when('/userDetail:userID',//Define a route that has a route parameter in it (:userID)
+          {
+            controller: 'UserDetailController',
+            templateUrl: '/app/partials/userDetail.html'
+          })
+      .when('/addNewUser',
+          {
+            controller: 'AddNewUserController',
+            templateUrl: '/app/partials/addNewUser.html'
+          })
+      .otherwise ({ redirectTo: '/'});
 });
 
 

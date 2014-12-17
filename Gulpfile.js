@@ -22,7 +22,7 @@ gulp.task('server', function() {
 
 // Reload automatic the browser html
 gulp.task('html', function() {
-  gulp.src('./**/*.html')
+  gulp.src('*.html')
     .pipe(connect.reload());
 });
 
