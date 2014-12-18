@@ -1,6 +1,22 @@
-# Agile Development with AngularJS+Bootstrap
+# Agile Development with AngularJS + Gulp + Bootstrap
 
-Easy App developed in AngularJS, uses Controller, Module, Factory, Routes, Config, Directives
+A simple application (Users Manager) in AngularJS for admin user, posts, albums.
+The data are request from a general CDN (http://jsonplaceholder.typicode.com), exported in JSON.
+
+It's uses Gulp to create a easy and quickly way to launch task that are repetitive and headache to the develpment team, like refresh browser, look for warnings and errors in JS files, start server in development, create package for production with CSS LESS, JS cleaner and compress it.
+
+
+##The following folder structure
+```
+  /app
+      /controllers      
+      /directives
+      /services
+      /partials
+      /views
+  /Content
+  /Scripts    
+```
 
 ## Dependencies
 - AngularJS
