@@ -1,0 +1,35 @@
+<div class="customerOrders view">
+    <div class="container">
+        <header>
+            <h3>User detail</h3>
+        </header>
+        <div>
+            <div class="row">
+                <div class="span12">
+                    <div class="indent" data-ng-repeat="detail in user">
+                        <h4>Name: <a class="text-success">{{detail.name}}</a></h4>
+                        <strong >Email: </strong><a href="mailto:{{detail.email}}">{{detail.email}}</a>
+                        <br />
+                        <strong >Website: </strong><a href="http://www.{{detail.website}}">http://www.{{detail.website}}</a>
+                        <br />
+                        <strong >Company: </strong>{{detail.company.name}}
+                        <br />
+                        <strong >Phone: </strong>{{detail.phone}}
+                        <br /><br />
+                        <address>
+                          <i class="icon-home"></i><strong >Address:</strong><br>
+                          <div class="indent">
+                              {{detail.address.street}}<br>
+                              {{detail.address.city}}<br>
+                              {{detail.address.zipcode}}<br>
+                          </div>
+                        </address>
+                       
+                    </div>
+                </div>                
+                <br /><br />
+               
+            </div>
+        </div>
+    </div>
+</div>

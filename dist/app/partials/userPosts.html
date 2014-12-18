@@ -1,0 +1,16 @@
+<div class="customers view">
+    <div class="container">
+        <header>
+            <h3>List of posts</h3>
+        </header>
+       
+        <div>
+            <div class="row cardContainer">
+                <div class="span3 cardPost" data-ng-repeat="post in userPosts | orderBy:'title'">
+                    <div class="cardHeaderPost">{{post.title}}</div>
+                    <div class="cardBody">{{post.body}}</div>      
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html data-ng-app="usersApp">
+<head>
+    <title>Users Manager</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="Content/usersManagementStyles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand " >
+                    <img src="Content/Images/administrator.png" alt="logo"> Users Manager
+                </a>
+                <ul class="nav nav-pills" data-ng-controller="NavbarController">
+                    <li data-ng-class="{'active':getClass('/')}"><a href="/">List of users</a></li>
+                    <li data-ng-class="{'active':getClass('/')}"><a href="/posts">List of all posts</a></li>
+                    <li data-ng-class="{'active':getClass('/')}"><a href="/albums">List of all Albums</a></li>
+                    <li data-ng-class="{'active':getClass('/')}"><a href="/addNewUser">Add new user</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Note that AngularJS 1.2+ now has a built-in ng-animation direction. Left in animated-view to show a 
+         custom directive -->
+    <div animated-view></div>
+
+
+    <div id="footer">
+        <div class="navbar navbar-fixed-bottom">
+            <div class="navbar-inner">
+                <div class="container">
+                    <footer>
+                        <div class="row">
+                            <div class="span4">
+                                <img src="Content/Images/angularShield.png" >
+                                Created by Javier Gonzalez
+                            </div>
+                            <div class="span4">
+                                Twitter: <a href="http://twitter.com/TermicaDesign">@TermicaDesign</a>
+                            </div>
+                            <div class="span4">
+                                Portfolio: <a href="http://www.termicadesign.com">www.termicadesign.com</a>
+                            </div>
+                        </div>
+                   </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vendor Libs: jQuery only used for Bootstrap functionality -->
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="Scripts/jquery.min.js"></script>
+
+    <!-- UI Libs -->
+    <script src="Scripts/bootstrap.js"></script>
+
+
+    <!-- App libs -->
+    <script src="app/app.js"></script>
+    <script src="app/controllers/controllers.js"></script>
+    <script src="app/services/usersService.js"></script>
+    <script src="app/directives/animatedView.js"></script>
+</body>
+</html>
