@@ -55,7 +55,7 @@ Gulpfile.js tasks
 
 ### Launch mode
 ```
-Develpment -> $ gulp
+Development -> $ gulp
 Production -> $ gulp production
 
 http://localhost:8080/
