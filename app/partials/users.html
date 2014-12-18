@@ -1,0 +1,23 @@
+﻿<div class="customers view">
+    <div class="container">
+        <header>
+            <h3>List of users</h3>
+        </header>
+       
+        <div>
+            <div class="row cardContainer">
+                <div class="span3 thumbnail" data-ng-repeat="user in users | orderBy:'name'">
+                    <div class="cardHeader">{{user.name}}</div>
+                    <br />
+                    <div class="cardBody"><strong >Email: </strong><a href="mailto:{{user.email}}">{{user.email}}</a></div>
+                    <div class="cardBody"><strong >Website: </strong><a href="http://www.{{user.website}}">http://www.{{user.website}}</a></div>
+                    <div class="cardBody"><strong >Company: </strong>{{user.company.name}}</div>
+                    <div class="cardBody">----------------------------</div>
+                    <div class="cardBody"><a href="/userDetail{{user.id}}" class="text-success"><i class="icon-user"></i> View User Detail</a></div>
+                    <div class="cardBody"><a href="/userPosts{{user.id}}" class="text-success"><i class="icon-file"></i> View My Posts</a></div>
+                    <div class="cardBody"><a href="/albums{{user.id}}" class="text-success"><i class="icon-camera"></i> View My Albums</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
