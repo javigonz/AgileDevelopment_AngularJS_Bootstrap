@@ -38,4 +38,9 @@ http://localhost:8080/
 ```
 
 
+### Minimizate CSS with Stylus
+```
+$ npm install -g stylus
+```
+
 

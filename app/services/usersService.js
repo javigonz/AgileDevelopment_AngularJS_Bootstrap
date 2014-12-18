@@ -3,19 +3,19 @@
 
 app.constant('BaseUrl', 'http://jsonplaceholder.typicode.com');
 
-app.factory("GetUsers", function(BaseUrl, $resource) {
+app.factory('GetUsers', function(BaseUrl, $resource) {
 
-  return $resource(BaseUrl + "/users");
+  return $resource(BaseUrl + '/users');
   
 });
 
-app.factory("GetDetailUser", function(BaseUrl, $resource) {
+app.factory('GetDetailUser', function(BaseUrl, $resource) {
 
    return $resource(BaseUrl + '/users' );
   
 });
 
-app.factory("AddNewUser", function() {
+app.factory('AddNewUser', function() {
 
    var AddNewUser = {};
    
@@ -27,33 +27,33 @@ app.factory("AddNewUser", function() {
   
 });
 
-app.factory("Posts", function(BaseUrl, $resource) {
+app.factory('Posts', function(BaseUrl, $resource) {
 
-  return $resource(BaseUrl + "/posts");
+  return $resource(BaseUrl + '/posts');
   
 });
 
-app.factory("GetPostsUser", function(BaseUrl, $resource) {
+app.factory('GetPostsUser', function(BaseUrl, $resource) {
 
    return $resource(BaseUrl + '/posts' );
   
 });
 
-app.factory("GetAlbums", function(BaseUrl, $resource) {
+app.factory('GetAlbums', function(BaseUrl, $resource) {
 
-  return $resource(BaseUrl + "/albums");
+  return $resource(BaseUrl + '/albums');
   
 });
 
-app.factory("GetAlbumDetail", function(BaseUrl, $resource) {
+app.factory('GetAlbumDetail', function(BaseUrl, $resource) {
 
    return $resource(BaseUrl + '/photos' );
   
 });
 
-app.factory("GetAlbumsUser", function(BaseUrl, $resource) {
+app.factory('GetAlbumsUser', function(BaseUrl, $resource) {
 
-  return $resource(BaseUrl + "/albums");
+  return $resource(BaseUrl + '/albums');
   
 });
 

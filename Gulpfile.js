@@ -4,7 +4,15 @@
 var gulp      = require('gulp'),
     connect   = require('gulp-connect'),
     jshint    = require('gulp-jshint'),
+    uglify    = require('gulp-uglify'),
+    minifyCss = require('gulp-minify-css'),
+    useref    = require('gulp-useref'),
+    gulpif    = require('gulp-if'),
+    uncss     = require('gulp-uncss'),
     historyApiFallback = require('connect-history-api-fallback');
+
+
+///////////////////////////////////////////////////////////////////////////////// DEVELOP
 
 // Developer server config
 gulp.task('server', function() {
@@ -41,7 +49,58 @@ gulp.task('watch', function() {
   gulp.watch(['./bower.json'], ['wiredep']);
 });
 
-// By default, run this task
+
+///////////////////////////////////////////////////////////////////////////////// PRODUCTION
+
+// // Production server config
+gulp.task('server-dist', function() {
+  connect.server({
+    root: './dist',
+    hostname: '0.0.0.0',
+    port: 8080,
+    livereload: true,
+    middleware: function(connect, opt) {
+      return [ historyApiFallback ];
+    }
+  });
+});
+
+// Compress and minimizate CSS y JS files
+gulp.task('compress', function() {
+  gulp.src('./app/**/*')
+    .pipe(gulpif('*.js', uglify({mangle: false })))
+    .pipe(gulpif('*.css', minifyCss()))
+    .pipe(gulp.dest('./dist/app'));
+  gulp.src('./Content/**/*')
+    .pipe(gulpif('*.js', uglify({mangle: false })))
+    .pipe(gulpif('*.css', minifyCss()))
+    .pipe(gulp.dest('./dist/Content'));  
+  gulp.src('./Scripts/**/*')
+    .pipe(gulpif('*.js', uglify({mangle: false })))
+    .pipe(gulpif('*.css', minifyCss()))
+    .pipe(gulp.dest('./dist/Scripts'));    
+});
+
+// Copy static files and index.html inside /dist without comments
+gulp.task('copy', function() {
+  gulp.src('./index.html')
+    .pipe(gulp.dest('./dist')); 
+});
+
+// Delete css non used
+gulp.task('uncss', function() {
+  gulp.src('./dist/Content/userManagementStyles.css')
+    .pipe(uncss({
+      html: ['./index.html', './partials/addNewUser.html', './partials/albumDetail.html'
+             , './partials/albums.html', './partials/albumsUser.html', './partials/posts.html'
+             , './partials/userDetail.html', './partials/userPosts.html',, './partials/users.html']
+    }))
+    .pipe(gulp.dest('./dist/Content'));
+});
+
+//////////////////////////////////////////////////////////////////////////////// TASK
+
 gulp.task('default', ['server','watch', 'jshint']);
+gulp.task('production', [ 'server-dist', 'compress', 'copy', 'uncss']);
 
 
