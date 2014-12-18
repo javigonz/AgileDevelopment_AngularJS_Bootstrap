@@ -20,6 +20,8 @@ It's uses Gulp to create a easy and quickly way to launch task that are repetiti
 
 ## Dependencies
 - AngularJS
+- Bootstrap
+- JQuery
 
 ## Usage
 ### Install global
@@ -45,18 +47,15 @@ Gulpfile.js tasks
 - Look for errors in js scripts and show its
 - Developer server config
 - Include libs installed by Bower
+- Minimize CSS files and non used files
+- Clean JS files
 
 ### Development mode
 ```
-$ gulp
+Develpment -> $ gulp
+Production -> $ gulp production
 
 http://localhost:8080/
-```
-
-
-### Minimizate CSS with Stylus
-```
-$ npm install -g stylus
 ```
 
 
