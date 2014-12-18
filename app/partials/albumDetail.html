@@ -1,0 +1,22 @@
+﻿<div class="customers view">
+    <div class="container">
+        <header>
+            <h3>Album Detail</h3>
+        </header>
+       
+        <div >
+
+            <div class="row cardContainer">
+                <div class="span4 thumbnail" data-ng-repeat="detail in albumDetail">
+                   
+                      <img src="{{detail.thumbnailUrl}}" alt="image">
+                      <br />
+                      <p class="text-center text-info">{{detail.title}}</p>
+                    
+                </div>
+            </div>  
+           
+
+        </div>
+    </div>
+</div>

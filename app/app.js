@@ -26,7 +26,7 @@ app.config(function ($locationProvider, $routeProvider) {
             controller: 'UsersController',
             templateUrl: '/app/partials/users.html'
           })
-      .when('/userDetail:userID',//Define a route that has a route parameter in it (:userID)
+      .when('/userDetail:userID',
           {
             controller: 'UserDetailController',
             templateUrl: '/app/partials/userDetail.html'
@@ -35,6 +35,31 @@ app.config(function ($locationProvider, $routeProvider) {
           {
             controller: 'AddNewUserController',
             templateUrl: '/app/partials/addNewUser.html'
+          })
+      .when('/posts',
+          {
+            controller: 'PostsController',
+            templateUrl: '/app/partials/posts.html'
+          })
+      .when('/userPosts:userID',
+          {
+            controller: 'UserPostsController',
+            templateUrl: '/app/partials/userPosts.html'
+          })
+       .when('/albums',
+          {
+            controller: 'AlbumsController',
+            templateUrl: '/app/partials/albums.html'
+          })
+       .when('/albums:userID',
+          {
+            controller: 'AlbumsUserController',
+            templateUrl: '/app/partials/albumsUser.html'
+          })
+       .when('/albumDetail:albumID',
+          {
+            controller: 'AlbumDetailController',
+            templateUrl: '/app/partials/albumDetail.html'
           })
       .otherwise ({ redirectTo: '/'});
 });

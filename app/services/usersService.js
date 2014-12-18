@@ -19,11 +19,41 @@ app.factory("AddNewUser", function() {
 
    var AddNewUser = {};
    
-   AddNewUser.insertUser = function (name, email) {
-        
+   AddNewUser.insertUser = function (objUser) {
+      //Method to add new user  
     };
 
     return AddNewUser;
+  
+});
+
+app.factory("Posts", function(BaseUrl, $resource) {
+
+  return $resource(BaseUrl + "/posts");
+  
+});
+
+app.factory("GetPostsUser", function(BaseUrl, $resource) {
+
+   return $resource(BaseUrl + '/posts' );
+  
+});
+
+app.factory("GetAlbums", function(BaseUrl, $resource) {
+
+  return $resource(BaseUrl + "/albums");
+  
+});
+
+app.factory("GetAlbumDetail", function(BaseUrl, $resource) {
+
+   return $resource(BaseUrl + '/photos' );
+  
+});
+
+app.factory("GetAlbumsUser", function(BaseUrl, $resource) {
+
+  return $resource(BaseUrl + "/albums");
   
 });
 

@@ -12,11 +12,13 @@
         <div class="navbar-inner">
             <div class="container">
                 <a class="brand " >
-                    <img src="Content/Images/people.png" alt="logo"> Users Manager
+                    <img src="Content/Images/administrator.png" alt="logo"> Users Manager
                 </a>
                 <ul class="nav nav-pills" data-ng-controller="NavbarController">
-                    <li data-ng-class="{'active':getClass('/userDetail')}"><a href="/"><i class="icon-user"></i> List of users</a></li>
-                    <li data-ng-class="{'active':getClass('/')}"><a href="/addNewUser"><i class="icon-plus-sign"></i> Add new user</a></li>
+                    <li data-ng-class="{'active':getClass('/')}"><a href="/">List of users</a></li>
+                    <li data-ng-class="{'active':getClass('/')}"><a href="/posts">List of all posts</a></li>
+                    <li data-ng-class="{'active':getClass('/')}"><a href="/albums">List of all Albums</a></li>
+                    <li data-ng-class="{'active':getClass('/')}"><a href="/addNewUser">Add new user</a></li>
                 </ul>
             </div>
         </div>
@@ -34,6 +36,7 @@
                     <footer>
                         <div class="row">
                             <div class="span4">
+                                <img src="Content/Images/angularShield.png" >
                                 Created by Javier Gonzalez
                             </div>
                             <div class="span4">

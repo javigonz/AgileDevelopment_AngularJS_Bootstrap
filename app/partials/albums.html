@@ -1,0 +1,16 @@
+﻿<div class="customers view">
+    <div class="container">
+        <header>
+            <h3>List of all Albums</h3>
+        </header>
+       
+        <div>
+            <div class="row cardContainer">
+                <div class="span3 thumbnail" data-ng-repeat="album in albums">
+                    <div class="cardBody"><h4>{{album.title}}</h4></div>
+                    <div class="cardBody"><a href="/albumDetail{{album.userId}}" class="text-success"><i class="icon-camera"></i> View Album Detail</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

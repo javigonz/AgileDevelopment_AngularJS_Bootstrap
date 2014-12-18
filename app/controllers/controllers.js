@@ -46,10 +46,8 @@ app.controller('AddNewUserController', function ($scope, AddNewUser) {
     
     $scope.insertUser = function()
     {
-    	var name = $scope.newUser.name;
-    	var email = $scope.newUser.email; 
 
-    	AddNewUser.insertUser(name,email)
+    	AddNewUser.insertUser($scope.newUser)
             .success(function () {
                 $scope.status = 'Inserted Customer! Refreshing customer list.';
             }).
@@ -57,6 +55,62 @@ app.controller('AddNewUserController', function ($scope, AddNewUser) {
                 $scope.status = 'Unable to insert customer: ' + error.message;
             });
 
+    }
+
+    init();
+
+});
+
+
+app.controller('PostsController', function ($scope, Posts) {
+
+    function init() {
+
+        $scope.posts = Posts.query();
+    }
+
+    init();
+
+});
+
+
+app.controller('UserPostsController', function ($scope, $routeParams, GetPostsUser) {
+
+    function init() {
+        $scope.userPosts = GetPostsUser.query({userId:$routeParams.userID});
+    }
+
+    init();
+
+});
+
+
+app.controller('AlbumsController', function ($scope, GetAlbums) {
+
+    function init() {
+        $scope.albums = GetAlbums.query();
+    }
+
+    init();
+
+});
+
+
+app.controller('AlbumDetailController', function ($scope, $routeParams, GetAlbumDetail) {
+
+    function init() {
+        $scope.albumDetail = GetAlbumDetail.query({albumId:$routeParams.albumID});
+    }
+
+    init();
+
+});
+
+
+app.controller('AlbumsUserController', function ($scope, $routeParams, GetAlbumsUser) {
+
+    function init() {
+        $scope.albumsUser = GetAlbumsUser.query({userId:$routeParams.userID});
     }
 
     init();
