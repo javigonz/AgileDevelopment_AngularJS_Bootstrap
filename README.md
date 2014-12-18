@@ -32,13 +32,16 @@ $ npm install -g bower
 
 ### Install local
 ```
-$ bower install angularjs
+$ bower install
+$ npm install
 
 ```
 ### Configuration
 ```
 Gulpfile.js -> Automated tasks
 Packege.json -> Dependencies
+bower.json -> Module Dependencies
+.jshintrc -> Configuration
 
 ```
 
@@ -50,7 +53,7 @@ Gulpfile.js tasks
 - Minimize CSS files and non used files
 - Clean JS files
 
-### Development mode
+### Launch mode
 ```
 Develpment -> $ gulp
 Production -> $ gulp production
