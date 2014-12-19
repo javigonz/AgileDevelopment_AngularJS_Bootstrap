@@ -9,6 +9,7 @@ var gulp      = require('gulp'),
     useref    = require('gulp-useref'),
     gulpif    = require('gulp-if'),
     uncss     = require('gulp-uncss'),
+    karma     = require('karma').server,
     historyApiFallback = require('connect-history-api-fallback');
 
 
@@ -98,9 +99,20 @@ gulp.task('uncss', function() {
     .pipe(gulp.dest('./dist/Content'));
 });
 
+//////////////////////////////////////////////////////////////////////////////// UNIT TEST
+
+//Unit Test with Karma
+gulp.task('test', function (done) {
+  karma.start({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done);
+});
+
 //////////////////////////////////////////////////////////////////////////////// TASK
 
 gulp.task('default', ['server','watch', 'jshint']);
 gulp.task('production', [ 'server-dist', 'compress', 'copy', 'uncss']);
+gulp.task('unitTest', ['test']);
 
 

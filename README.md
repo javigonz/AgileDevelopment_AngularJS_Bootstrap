@@ -46,13 +46,27 @@ bower.json -> Module Dependencies
 ```
 
 Gulpfile.js tasks
-- When there are changes in HTML, then browser it reload automatic
+- When there are changes in HTML then browser it reload automatic
 - Look for errors in js scripts and show its
 - Developer server config
 - Include libs installed by Bower
 - Minimize CSS files and non used files
 - Clean JS files
 
+
+### Unit Test with karma
+```
+# Install Karma:
+$ [sudo] npm install karma --save-dev
+
+# Install plugins that your project needs:
+$ [sudo] npm install karma-jasmine karma-chrome-launcher --save-dev
+
+$ [sudo] npm install -g karma-cli
+
+$ gulp unitTest
+
+```
 ### Launch mode
 ```
 Development -> $ gulp
