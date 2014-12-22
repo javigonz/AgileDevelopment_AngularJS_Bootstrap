@@ -56,6 +56,7 @@ Gulpfile.js tasks
 
 ### Unit Test with karma
 ```
+
 # Install Karma:
 $ [sudo] npm install karma --save-dev
 
@@ -63,6 +64,10 @@ $ [sudo] npm install karma --save-dev
 $ [sudo] npm install karma-jasmine karma-chrome-launcher --save-dev
 
 $ [sudo] npm install -g karma-cli
+
+# Configure karma conf file:
+$ karma init karma.conf.js
+$ sudo npm install --save-dev angular-mocks
 
 $ gulp unitTest
 
