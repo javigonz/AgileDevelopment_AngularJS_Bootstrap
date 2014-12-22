@@ -5,6 +5,8 @@ The data are request from a general CDN (http://jsonplaceholder.typicode.com), e
 
 It's uses Gulp to create a easy and quickly way to launch task that are repetitive and headache to the develpment team, like refresh browser, look for warnings and errors in JS files, start server in development, create package for production with CSS LESS, JS cleaner and compress it.
 
+Click <a href="http://www.malagaenblancoynegro.com/AgileDevelopment_angularjs/index.html" >here</a> to view onLine
+
 
 ##The folder structure
 ```
